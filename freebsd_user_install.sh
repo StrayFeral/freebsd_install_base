@@ -16,17 +16,6 @@ sudo chown root:wheel /etc/motd
 # sudo vi etc/motd
 
 echo ""
-echo "==================================== ENABLE SUDO ..."
-echo ""
-# change sudo password timeout - you might NOT want this
-# (i do it for virtual machines)
-echo "add this line at the bottom:"
-echo "Defaults timestamp_timeout=300  # 5 hours"
-echo "Press ENTER to continue..."
-read -r  # waits for Enter
-sudo visudo
-
-echo ""
 echo "==================================== LXQT FINAL MODIFICATIONS ..."
 echo ""
 echo "right click application menu > configure > widgets"
@@ -42,8 +31,6 @@ echo "reload cpan"
 echo "install Perl::Critic"
 echo "install Test2::V0"
 perl -MCPAN -e shell
-# install ale for vim and config it
-pkg install -y vim-ale
 
 echo ""
 echo "FINALLY: INSTALL BULGARIAN TRADITIONAL PHONETIC LAYOUT"
