@@ -53,8 +53,8 @@ fi
 ```
 * Download these automated scripts:
 ```bash
-git clone https://github.com/StrayFeral/freebsd_install_base.git /home/YOUTNEWUSER/freebsd_install_base
-chown -R YOUTNEWUSER:YOUTNEWUSER /home/YOUTNEWUSER/freebsd_install_base
+git clone https://github.com/StrayFeral/freebsd_install_base.git /home/YOURNEWUSER/freebsd_install_base
+chown -R YOURNEWUSER:YOURNEWUSER /home/YOURNEWUSER/freebsd_install_base
 ```
 * RELOGIN
 ```bash
@@ -63,13 +63,13 @@ logout
 
 ## LOGIN AS ROOT and run first automated script with your new added user as a parameter (it will reboot at the end)
 ```bash
-cd /home/YOUTNEWUSER/freebsd_install_base
+cd /home/YOURNEWUSER/freebsd_install_base
 ./freebsd_install001.sh YOURUSER |& tee -a install001_output.txt
 ```
 
 ## LOGIN AS ROOT and run second automated script
 ```bash
-cd /home/YOUTNEWUSER/freebsd_install_base
+cd /home/YOURNEWUSER/freebsd_install_base
 ./freebsd_install002.sh |& tee -a install002_output.txt
 ```
 
