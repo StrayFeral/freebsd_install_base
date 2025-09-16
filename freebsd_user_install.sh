@@ -1,10 +1,9 @@
 #!/usr/local/bin/bash
 set -exuo pipefail
 
-# RUN THIS AS:
-# ./freebsd_user_install.sh |& tee -a install_user_output.txt
 echo ""
 echo "Run this script as YOUR USER on a fresh FreeBSD installation."
+echo "USAGE: ./freebsd_user_install.sh |& tee -a install_user_output.txt"
 echo ""
 
 echo "==================================== CHANGE MOTD ..."

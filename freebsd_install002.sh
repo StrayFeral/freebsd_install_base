@@ -1,10 +1,9 @@
 #!/usr/local/bin/bash
 set -exuo pipefail
 
-# RUN THIS AS:
-# ./freebsd_install002.sh |& tee -a install002_output.txt
 echo ""
 echo "Run this script as root on a fresh FreeBSD installation."
+echo "USAGE: ./freebsd_install002.sh |& tee -a install002_output.txt"
 echo ""
 
 echo ""
