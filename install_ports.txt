@@ -1,0 +1,4 @@
+Install trough ports
+-------------------
+cd /usr/ports/editors/nano
+make install clean

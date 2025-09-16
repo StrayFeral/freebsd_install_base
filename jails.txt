@@ -1,0 +1,31 @@
+NEW JAIL
+----------
+#### env SDINSTALL_DISTSITE="https://download.FreeBSD.org/ftp/releases/amd64/14.3-RELEASE/" bsdinstall jail /usr/jails/myjail
+
+sudo bsdinstall jail /usr/jails/myjail
+
+sudo jail -c myjail  # test if jail is okay
+sudo ifconfig lo1 create
+
+sudo service jail start myjail
+jls
+sudo jexec myjail /bin/tcsh
+
+jls -j myjail  # test if jail is running
+
+service jail stop myjail
+
+MINIMAL JAIL.CONF
+--------------------
+# /etc/jail.conf
+exec.clean;
+mount.devfs;
+
+myjail {
+    host.hostname = "myjail.local";
+    path = "/usr/jails/myjail";
+    ip4.addr = "127.0.0.1";   # must be a valid address
+    interface = "lo1";           # change to your NIC
+    exec.start = "/bin/sh /etc/rc";
+    exec.stop  = "/bin/sh /etc/rc.shutdown";
+}
