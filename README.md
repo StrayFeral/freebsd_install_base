@@ -1,13 +1,22 @@
 # FreeBSD base setup
-## QUESTIONS
+## QUESTIONS BEFORE INSTALLATION
 1. Hostname policy?
 2. Static IP?
 
-NOTE: This setup is tested on FreeBSD 13.5 and 14.3
+**NOTE: This setup is tested on FreeBSD 13.5 and 14.3**
 
 ## IMPORTANT LOCATIONS
 * JAILS: /usr/jails
 * PORTS: /usr/ports
+
+## WHAT ARE THESE INSTRUCTIONS AND SCRIPTS ACTUALLY DOING?
+* Semi-automated installation of FreeBSD
+* Setup of root and one more user
+* Installation of LXQT (if you want another desktop environment - feel free to modify
+* Installation of other utilities
+
+## WHY ARE THESE INSTRUCTIONS AND SCRIPTS CREATED
+* To help me create FreeBSD virtual machines faster and eventually help to setup a development host
 
 ## INSTALLATION OF FREEBSD
 * At this step you are supposed to start installation of FreeBSD one way or another (from flash stick or whatever)
