@@ -60,6 +60,21 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 ```
+* Enable sudo
+```bash
+# add any user to group "wheel"
+# uncomment this:
+# %wheel ALL=(ALL:ALL) ALL
+visudo
+
+su YOURNEWUSER
+# change sudo password timeout - you might NOT want this
+# (i do it for virtual machines)
+# add this line at the bottom:
+# Defaults timestamp_timeout=300  # 5 hours
+sudo visudo
+logout
+```
 * Download these automated scripts:
 ```bash
 git clone https://github.com/StrayFeral/freebsd_install_base.git /home/YOURNEWUSER/freebsd_install_base
