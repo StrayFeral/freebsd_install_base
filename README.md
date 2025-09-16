@@ -23,11 +23,11 @@ pkg update
 pkg upgrade
 ## portsnap fetch extract  # get the ports tree
 
-pkg install en-freebsd-doc
-pkg install bash
-pkg install bash-completion
-pkg install vim
-pkg install git
+pkg install -y en-freebsd-doc
+pkg install -y bash
+pkg install -y bash-completion
+pkg install -y vim
+pkg install -y git
 
 # Setup bash
 echo "/usr/local/bin/bash" | tee -a /etc/shells
