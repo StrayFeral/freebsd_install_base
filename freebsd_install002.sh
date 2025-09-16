@@ -8,7 +8,7 @@ echo "Run this script as root on a fresh FreeBSD installation."
 echo ""
 
 echo ""
-echo "MY ACTUAL LXQT SETTINGS:"
+echo "NOTE: My actual LXQT settings:"
 echo "qtstyle: breeze"
 echo "gtk themes: Arc-Dark"
 echo "icons theme: ePapirus"
@@ -18,24 +18,24 @@ echo ""
 echo "==================================== INSTALLING OTHER APPS ..."
 echo ""
 
-pkg install firefox
-pkg install chromium
-pkg install vscode
-pkg install regexxer
-pkg install ghex
-pkg install meld
+pkg install -y firefox
+pkg install -y chromium
+pkg install -y vscode
+pkg install -y regexxer
+pkg install -y ghex
+pkg install -y meld
 # download advanced rest client: arc-linux
-# pkg install terminator  # problem - space after each char !
-pkg install vlc
-pkg install gimp
-pkg install libreoffice
-pkg install gnome-clocks
-# pkg install kcalc
-pkg install arc
+# pkg install -y terminator  # problem - space after each char !
+pkg install -y vlc
+pkg install -y gimp
+pkg install -y libreoffice
+pkg install -y gnome-clocks
+# pkg install -y kcalc
+pkg install -y arc
 # install betterbird mail client or thunderbird
-pkg install geany
-pkg install geany-plugins
-pkg install thunderbird
+pkg install -y geany
+pkg install -y geany-plugins
+pkg install -y thunderbird
 
 # freebsd-update fetch install
 # 14.3-RELEASE-p2

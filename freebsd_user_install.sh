@@ -43,7 +43,7 @@ echo "install Perl::Critic"
 echo "install Test2::V0"
 perl -MCPAN -e shell
 # install ale for vim and config it
-pkg install vim-ale
+pkg install -y vim-ale
 
 echo ""
 echo "FINALLY: INSTALL BULGARIAN TRADITIONAL PHONETIC LAYOUT"

@@ -7,15 +7,21 @@ echo ""
 echo "Run this script as root on a fresh FreeBSD installation."
 echo ""
 
+if [ -z "$1" ]; then
+    echo "USAGE: freebsd_install001.sh YOURNEWUSER"
+    echo "Error: missing argument" >&2
+    exit 1
+fi
+
 echo "==================================== INSTALLING BASIC TOOLS ..."
 echo ""
-pkg install plocate
-pkg install sudo
-# pkg install octopkg  # i disliked it
-pkg install python
-pkg install py311-pip  # ne e istina
-pkg install bind-tools  # dig, nslookup, bind...
-pkg install xscreensaver  # flurry
+pkg install -y plocate
+pkg install -y sudo
+# pkg install -y octopkg  # i disliked it
+pkg install -y python
+pkg install -y py311-pip  # ne e istina
+pkg install -y bind-tools  # dig, nslookup, bind...
+pkg install -y xscreensaver  # flurry
 
 echo ""
 echo "==================================== ENABLE JAILS ..."
@@ -32,21 +38,21 @@ git clone https://git.freebsd.org/ports.git /usr/ports
 echo ""
 echo "==================================== INSTALLING LXQT ..."
 echo ""
-pkg install xorg
-pkg install dbus
-# pkg install hal
+pkg install -y xorg
+pkg install -y dbus
+# pkg install -y hal
 sysrc dbus_enable="YES"
 # sysrc hald_enable="YES"
 service dbus start
 # service hald start
 
-pkg install lxqt slim
+pkg install -y lxqt slim
 sysrc slim_enable="YES"
 echo "exec startlxqt" > ~/.xinitrc
-# pkg install oxygen-icons  # fixes missing icons
-pkg install papirus-icon-theme
-pkg install breeze-qt5
-pkg install breeze-qt6
+# pkg install -y oxygen-icons  # fixes missing icons
+pkg install -y papirus-icon-theme
+pkg install -y breeze-qt5
+pkg install -y breeze-qt6
 
 echo ""
 echo "==================================== ADDING TO BASHRC ..."
