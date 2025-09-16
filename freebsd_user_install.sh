@@ -8,9 +8,12 @@ echo ""
 
 echo "==================================== CHANGE MOTD ..."
 echo ""
+mkdir -p /home/$USER/Documents
 sudo cp /etc/motd /home/$USER/Documents/motd
-sudo chown $USER:$USER /home/$USER/Documents/motd
-sudo vi etc/motd
+sudo chown $USER:$USER /home/$USER/Documents/motd  # backup
+sudo cp /home/$USER/freebsd_install_base/motd /etc/motd
+sudo chown root:wheel /etc/motd
+# sudo vi etc/motd
 
 echo ""
 echo "==================================== ENABLE SUDO ..."
