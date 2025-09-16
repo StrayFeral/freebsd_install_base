@@ -34,7 +34,7 @@ echo "/usr/local/bin/bash" | tee -a /etc/shells
 chsh -s /usr/local/bin/bash
 # sudo chsh -s /usr/local/bin/bash root
 # use UI "Users and Groups" to change it for my user
-chsh -s /usr/local/bin/bash MYUSER  # whatever username you want
+chsh -s /usr/local/bin/bash YOURNEWUSER  # whatever username you want
 ```
 * Add to /etc/profile:
 ```bash
