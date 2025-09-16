@@ -62,7 +62,7 @@ chown -R YOURNEWUSER:YOURNEWUSER /home/YOURNEWUSER/freebsd_install_base
 # This fixes the retries of sendmail_send
 blah.local blah
 
-And if your hostname is not set as blah.local, you need to add this to /etc/rc.conf:
+# And if your hostname is not set as blah.local, you need to add this to /etc/rc.conf:
 hostname="blah.local"
 ```
 * RELOGIN
