@@ -68,7 +68,7 @@ chown -R YOURNEWUSER:YOURNEWUSER /home/YOURNEWUSER/freebsd_install_base
 * If this is a virtual machine or container:
 ```bash
 # Add this to /etc/hosts on the line where they define localhost:
-# This fixes the retries of sendmail_send
+# This fixes the retries of sendmail_submit
 blah.local blah
 
 # And if your hostname is not set as blah.local, you need to add this to /etc/rc.conf:
