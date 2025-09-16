@@ -13,6 +13,7 @@ sudo cp /etc/motd /home/$USER/Documents/motd
 sudo chown $USER:$USER /home/$USER/Documents/motd
 sudo vi etc/motd
 
+echo ""
 echo "==================================== ENABLE SUDO ..."
 echo ""
 # add any user to group "wheel"
@@ -25,20 +26,19 @@ sudo visudo
 echo "add this line at the bottom:"
 echo "Defaults timestamp_timeout=300  # 5 hours"
 
+echo ""
 echo "==================================== LXQT FINAL MODIFICATIONS ..."
 echo ""
 echo "right click application menu > configure > widgets"
 echo 'remove "fancy app menu", add "app menu"'
 
+echo ""
 echo "==================================== CREATE PERL LOCAL LIB ..."
 echo ""
-#perl -MCPAN -e shell
+# Yes, I know this could be automated
 echo "install Term::ReadLine::Perl"
 echo "install CPAN"
 echo "reload cpan"
-# install perlcritic
-# install perltidy
-# install Perl::Tidy
 echo "install Perl::Critic"
 echo "install Test2::V0"
 perl -MCPAN -e shell
@@ -46,4 +46,6 @@ perl -MCPAN -e shell
 pkg install vim-ale
 
 echo ""
-echo "INSTALL BULGARIAN TRADITIONAL PHONETIC LAYOUT"
+echo "FINALLY: INSTALL BULGARIAN TRADITIONAL PHONETIC LAYOUT"
+echo ""
+echo "Done."

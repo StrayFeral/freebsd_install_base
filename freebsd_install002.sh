@@ -7,10 +7,13 @@ echo ""
 echo "Run this script as root on a fresh FreeBSD installation."
 echo ""
 
-# qtstyle: breeze
-# gtk themes: Arc-Dark
-# icons theme: ePapirus
-# colors: Arc
+echo ""
+echo "MY ACTUAL LXQT SETTINGS:"
+echo "qtstyle: breeze"
+echo "gtk themes: Arc-Dark"
+echo "icons theme: ePapirus"
+echo "colors: Arc"
+echo ""
 
 echo "==================================== INSTALLING OTHER APPS ..."
 echo ""
@@ -37,6 +40,7 @@ pkg install thunderbird
 # freebsd-update fetch install
 # 14.3-RELEASE-p2
 
+echo ""
 echo "==================================== INSTALLING VIM PLUGINS ..."
 echo ""
 mkdir -p ~/.vim/autoload
@@ -46,7 +50,10 @@ echo "call plug#begin('~/.vim/plugged')" >> ~/.vimrc
 echo "Plug 'dense-analysis/ale'" >> ~/.vimrc
 echo "call plug#end()" >> ~/.vimrc
 
-## run in vim:
-# :PlugInstall
-## test installation:
-# :echo ale#engine#IsChecking()
+echo "Run in vim:"
+echo ":PlugInstall"
+echo "Test installation:"
+echo ":echo ale#engine#IsChecking()"
+
+echo ""
+echo "Done."
