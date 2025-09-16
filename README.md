@@ -56,6 +56,15 @@ fi
 git clone https://github.com/StrayFeral/freebsd_install_base.git /home/YOURNEWUSER/freebsd_install_base
 chown -R YOURNEWUSER:YOURNEWUSER /home/YOURNEWUSER/freebsd_install_base
 ```
+* If this is a virtual machine or container:
+```bash
+# Add this to /etc/hosts on the line where they define localhost:
+# This fixes the retries of sendmail_send
+blah.local blah
+
+And if your hostname is not set as blah.local, you need to add this to /etc/rc.conf:
+hostname="blah.local"
+```
 * RELOGIN
 ```bash
 logout
