@@ -1,6 +1,8 @@
 #!/usr/local/bin/bash
 set -exuo pipefail
 
+ver=$(freebsd-version | cut -d- -f1)  # get base version, e.g. "13.5" or "14.1"
+
 echo ""
 echo "Run this script as root on a fresh FreeBSD installation."
 echo "USAGE: ./freebsd_install001.sh YOURUSER |& tee -a install001_output.txt"
@@ -50,8 +52,18 @@ sysrc slim_enable="YES"
 echo "exec startlxqt" > ~/.xinitrc
 # pkg install -y oxygen-icons  # fixes missing icons
 pkg install -y papirus-icon-theme
-pkg install -y breeze-qt5
-pkg install -y breeze-qt6
+
+if [[ "$ver" == 13* ]]; then
+    echo "FreeBSD 13.x specific ..."
+    pkg install -y kf6-breeze-icons
+    pkg install -y plasma6-breeze-gtk
+elif [[ "$ver" == 14* ]]; then
+    echo "FreeBSD 14.x specific ..."
+    pkg install -y breeze-qt5
+    pkg install -y breeze-qt6
+else
+    echo "Unsupported FreeBSD version: $ver"
+fi
 
 echo ""
 echo "==================================== ADDING TO BASHRC ..."
@@ -65,7 +77,7 @@ echo "==================================== ENABLE USERS IN LXQT ..."
 echo ""
 # add users to group "video" so they could login in lxqt !!!
 echo "exec startlxqt" > /home/$1/.xinitrc
-chown $1:$1 /home/yourusername/.xinitrc
+chown $1:$1 /home/$1/.xinitrc
 ## chmod +x ~/.xinitrc  # really ?? - no need
 
 echo ""
