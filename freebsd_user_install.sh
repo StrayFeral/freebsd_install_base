@@ -18,15 +18,13 @@ sudo chown root:wheel /etc/motd
 echo ""
 echo "==================================== ENABLE SUDO ..."
 echo ""
-# add any user to group "wheel"
-visudo
-echo "uncomment this:"
-echo "%wheel ALL=(ALL:ALL) ALL"
-
-# change sudo password timeout
-sudo visudo
+# change sudo password timeout - you might NOT want this
+# (i do it for virtual machines)
 echo "add this line at the bottom:"
 echo "Defaults timestamp_timeout=300  # 5 hours"
+echo "Press ENTER to continue..."
+read -r  # waits for Enter
+sudo visudo
 
 echo ""
 echo "==================================== LXQT FINAL MODIFICATIONS ..."

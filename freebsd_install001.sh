@@ -73,6 +73,16 @@ echo "export QT_QPA_PLATFORMTHEME=qt6ct" >> ~/.bashrc
 echo "alias vi='vim'" >> ~/.bashrc
 
 echo ""
+echo "==================================== ENABLE SUDO ..."
+echo ""
+# add any user to group "wheel"
+echo "uncomment this:"
+echo "%wheel ALL=(ALL:ALL) ALL"
+echo "Press ENTER to continue..."
+read -r  # waits for Enter
+visudo
+
+echo ""
 echo "==================================== ENABLE USERS IN LXQT ..."
 echo ""
 # add users to group "video" so they could login in lxqt !!!
