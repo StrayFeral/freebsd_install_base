@@ -3,7 +3,7 @@
 1. Hostname policy?
 2. Static IP?
 
-**NOTE: This setup is tested on FreeBSD 13.5 and 14.3**
+**NOTE: This setup is tested on FreeBSD 13.5 and 14.3, both using images "amd64-disc1.iso"**
 
 ## IMPORTANT LOCATIONS
 * JAILS: /usr/jails
