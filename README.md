@@ -23,27 +23,26 @@
 * After you setup the root user, create at lease one more user
 * Leave the new user initial group as is
 * Invite new user to group "wheel" (so they could use "sudo" later
+* Any reference to "YOURNEWUSER" goes to this new (and any new) user you created
 
 ## INITIAL MANUAL INSTALL
-* Run:
+* These very first steps are supposed to lay out the foundation on top of which the automated scripts below could work but also help you debug installation issues, in case such arise.
 ```bash
 freebsd-update fetch install  # get any system and security updates
 pkg update
 pkg upgrade
-## portsnap fetch extract  # get the ports tree
 
 pkg install -y en-freebsd-doc
 pkg install -y bash
 pkg install -y bash-completion
 pkg install -y vim
 pkg install -y git
+pkg install -y sudo
 
 # Setup bash
 echo "/usr/local/bin/bash" | tee -a /etc/shells
 chsh -s /usr/local/bin/bash
-# sudo chsh -s /usr/local/bin/bash root
-# use UI "Users and Groups" to change it for my user
-chsh -s /usr/local/bin/bash YOURNEWUSER  # whatever username you want
+chsh -s /usr/local/bin/bash YOURNEWUSER  # change the shell for your other new user
 ```
 * Add to /etc/profile:
 ```bash
@@ -52,8 +51,8 @@ if [ -f /usr/local/share/bash-completion/bash_completion ]; then
   . /usr/local/share/bash-completion/bash_completion
 fi
 ```
-* Create ~/.bashrc
-* Create ~/.vimrc
+* Create ~/.bashrc - do whatever you want, I won't get into this
+* Create ~/.vimrc - same here
 * Add to ~/.bash_profile:
 ```bash
 if [ -f ~/.bashrc ]; then
@@ -62,18 +61,11 @@ fi
 ```
 * Enable sudo
 ```bash
-# add any user to group "wheel"
-# uncomment this:
-# %wheel ALL=(ALL:ALL) ALL
-visudo
-
-su YOURNEWUSER
-# change sudo password timeout - you might NOT want this
-# (i do it for virtual machines)
-# add this line at the bottom:
-# Defaults timestamp_timeout=300  # 5 hours
-sudo visudo
-logout
+# add any new user to group "wheel"
+echo "%wheel ALL=(ALL:ALL) ALL" | tee -a /usr/local/etc/sudoers.d/wheelers
+# you might NOT want to do the next line, i do it for virtual machines
+echo "Defaults timestamp_timeout=300  # 5 hours" | tee -a /usr/local/etc/sudoers.d/wheelers
+chmod 0440 /usr/local/etc/sudoers.d/wheelers
 ```
 * Download these automated scripts:
 ```bash
@@ -83,7 +75,7 @@ chown -R YOURNEWUSER:YOURNEWUSER /home/YOURNEWUSER/freebsd_install_base
 * If this is a virtual machine or container:
 ```bash
 # Add this to /etc/hosts on the line where they define localhost:
-# This fixes the retries of sendmail_submit
+# This fixes the retries of sendmail_submit and saves some time on boot-up
 blah.local blah
 
 # And if your hostname is not set as blah.local, you need to add this to /etc/rc.conf:
