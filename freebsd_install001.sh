@@ -17,17 +17,15 @@ fi
 echo "==================================== INSTALLING BASIC TOOLS ..."
 echo ""
 pkg install -y plocate
-pkg install -y sudo
 # pkg install -y octopkg  # i disliked it
 pkg install -y python
-pkg install -y py311-pip  # ne e istina
+pkg install -y py311-pip
 pkg install -y bind-tools  # dig, nslookup, bind...
-pkg install -y xscreensaver  # flurry
+pkg install -y xscreensaver  # flurry; you might NOT want this on a VM
 
 echo ""
 echo "==================================== ENABLE JAILS ..."
 echo ""
-# enable jails
 mkdir /usr/jails
 echo 'jail_enable="YES"' >> /etc/rc.conf
 
@@ -49,7 +47,7 @@ service dbus start
 
 pkg install -y lxqt slim
 sysrc slim_enable="YES"
-echo "exec startlxqt" > ~/.xinitrc
+echo "exec startlxqt" >> ~/.xinitrc
 # pkg install -y oxygen-icons  # fixes missing icons
 pkg install -y papirus-icon-theme
 
@@ -76,9 +74,17 @@ echo ""
 echo "==================================== ENABLE USERS IN LXQT ..."
 echo ""
 # add users to group "video" so they could login in lxqt !!!
-echo "exec startlxqt" > /home/$1/.xinitrc
+echo "exec startlxqt" >> /home/$1/.xinitrc
 chown $1:$1 /home/$1/.xinitrc
 ## chmod +x ~/.xinitrc  # really ?? - no need
+
+echo ""
+echo "NOTE: My actual LXQT settings:"
+echo "qtstyle: breeze"
+echo "gtk themes: Arc-Dark"
+echo "icons theme: ePapirus"
+echo "colors: Arc"
+echo ""
 
 echo ""
 echo "==================================== DONE. REBOOT ..."

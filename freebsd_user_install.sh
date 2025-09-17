@@ -6,16 +6,16 @@ echo "Run this script as YOUR USER on a fresh FreeBSD installation."
 echo "USAGE: ./freebsd_user_install.sh |& tee -a install_user_output.txt"
 echo ""
 
-mkdir -p /home/$USER/.ssh
+# the ssh keys would go there - this is up to you
+mkdir -p ~/.ssh
 
 echo "==================================== CHANGE MOTD ..."
 echo ""
-mkdir -p /home/$USER/Documents
-sudo cp /etc/motd /home/$USER/Documents/motd
-sudo chown $USER:$USER /home/$USER/Documents/motd  # backup
-sudo cp /home/$USER/freebsd_install_base/motd /etc/motd
+mkdir -p ~/Documents
+sudo cp /etc/motd ~/Documents/motd
+sudo chown $USER:$USER ~/Documents/motd  # backup
+sudo cp ~/freebsd_install_base/motd /etc/motd
 sudo chown root:wheel /etc/motd
-# sudo vi etc/motd
 
 echo ""
 echo "==================================== CREATE PERL LOCAL LIB ..."
@@ -26,6 +26,21 @@ perl -MCPAN -e 'CPAN::Shell->install("CPAN"); CPAN::Shell->reload("cpan")'
 perl -MCPAN -e 'CPAN::Shell->install("Term::ReadLine::Perl")'
 perl -MCPAN -e 'CPAN::Shell->install("Perl::Critic")'
 perl -MCPAN -e 'CPAN::Shell->install("Test2::V0")'
+
+echo ""
+echo "==================================== INSTALLING VIM PLUGINS ..."
+echo ""
+mkdir -p ~/.vim/autoload
+mkdir -p ~/.vim/plugged
+fetch -o ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+echo "call plug#begin('~/.vim/plugged')" >> ~/.vimrc
+echo "Plug 'dense-analysis/ale'" >> ~/.vimrc
+echo "call plug#end()" >> ~/.vimrc
+
+echo "Run in vim:"
+echo ":PlugInstall"
+echo "Test installation:"
+echo ":echo ale#engine#IsChecking()"
 
 echo ""
 echo "==================================== LXQT FINAL MODIFICATIONS ..."
