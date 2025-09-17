@@ -22,7 +22,7 @@
 * At this step you are supposed to start installation of FreeBSD one way or another (from flash stick or whatever)
 * After you setup the root user, create at least one more user
 * Leave the new user initial group as is
-* Invite new user to group "wheel" (so they could use "sudo" later
+* Invite new user to group "wheel" (so they could use "sudo" later)
 * Any reference to "YOURNEWUSER" goes to this new (and any new) user you created
 
 ## INITIAL MANUAL INSTALL
