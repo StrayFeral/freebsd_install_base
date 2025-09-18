@@ -19,7 +19,9 @@
 * To help me create FreeBSD virtual machines faster and eventually help to setup a development host
 
 ## INSTALLATION OF FREEBSD
-* At this step you are supposed to start installation of FreeBSD one way or another (from flash stick or whatever)
+* First download a FreeBSD image from [The FreeBSD website](https://www.freebsd.org/where/)
+* I am using QEMU/KVM to create a virtual machine, but you can install on a real host or with other VM software
+* Start installation of FreeBSD
 * After you setup the root user, create at least one more user
 * Leave the new user initial group as is
 * Invite new user to group "wheel" (so they could use "sudo" later)
