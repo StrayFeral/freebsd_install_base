@@ -46,14 +46,6 @@ echo "/usr/local/bin/bash" | tee -a /etc/shells
 chsh -s /usr/local/bin/bash
 chsh -s /usr/local/bin/bash YOURNEWUSER  # change the shell for your other new user
 ```
-* Enable sudo
-```bash
-# add any new user to group "wheel"
-echo "%wheel ALL=(ALL:ALL) ALL" | tee -a /usr/local/etc/sudoers.d/wheelers
-# you might NOT want to do the next line, i do it for virtual machines
-echo "Defaults timestamp_timeout=300  # 5 hours" | tee -a /usr/local/etc/sudoers.d/wheelers
-chmod 0440 /usr/local/etc/sudoers.d/wheelers
-```
 * Download these automated scripts:
 ```bash
 git clone https://github.com/StrayFeral/freebsd_install_base.git /home/YOURNEWUSER/freebsd_install_base
