@@ -71,18 +71,33 @@ logout
 
 ## LOGIN AS ROOT and run first automated script with your new added user as a parameter (it will reboot at the end)
 ```bash
+# this script will:
+# - populate some config files
+# - install some basic tools (like python, bind-tools etc)
+# - enable jails
+# - clone the ports tree
+# - install LXQT and enable the users in LXQT
+
 cd /home/YOURNEWUSER/freebsd_install_base
 ./freebsd_install001.sh YOURUSER |& tee -a install001_output.txt
 ```
 
-## LOGIN AS ROOT and run second automated script
+## LOGIN AS ROOT and run second automated script (you could skip this step)
 ```bash
+# this script will:
+# - install desktop apps like browsers, GIMP etc
+
 cd /home/YOURNEWUSER/freebsd_install_base
 ./freebsd_install002.sh |& tee -a install002_output.txt
 ```
 
-## LOGIN AS YOUR NEW USER and run final automated script
+## LOGIN AS YOUR NEW USER and run final automated script (you could skip this step)
 ```bash
+# this script will:
+# - create local Perl lib
+# - change motd
+# - install ALE vim plugin
+
 cd ~/freebsd_install_base
 ./freebsd_user_install.sh |& tee -a install_user_output.txt
 ```
