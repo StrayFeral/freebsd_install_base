@@ -105,6 +105,7 @@ echo ""
 chown $1:$1 /home/$1/.xinitrc
 chown $1:$1 /home/$1/.vimrc
 chown $1:$1 /home/$1/.bashrc
+chown $1:$1 /home/$1/.bash_profile
 
 echo ""
 echo "NOTE: My actual LXQT settings:"
