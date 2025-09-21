@@ -30,16 +30,16 @@
 ## INITIAL MANUAL INSTALL
 * These very first steps are supposed to lay out the foundation on top of which the automated scripts below could work but also help you debug installation issues, in case such arise.
 ```bash
-freebsd-update fetch install  # get any system and security updates
+freebsd-update fetch install     # get any system and security updates
 pkg update
 pkg upgrade
 
-pkg install -y en-freebsd-doc
-pkg install -y bash
-pkg install -y bash-completion
-pkg install -y vim
-pkg install -y git
-pkg install -y sudo
+pkg install -y en-freebsd-doc    # freebsd english documentation
+pkg install -y bash              # i feel more comfortable in bash
+pkg install -y bash-completion   # that completion when you press the tab
+pkg install -y vim               # vi improved - editor
+pkg install -y git               # source control and version control system
+pkg install -y sudo              # for use with new users
 
 # Basic configs for comfort
 cp .bashrc /root
