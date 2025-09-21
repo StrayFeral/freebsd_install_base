@@ -41,10 +41,6 @@ pkg install -y vim               # vi improved - editor
 pkg install -y git               # source control and version control system
 pkg install -y sudo              # for use with new users
 
-# Basic configs for comfort
-cp .bashrc /root
-cp .vimrc /root
-
 # Setup bash
 echo "/usr/local/bin/bash" | tee -a /etc/shells
 chsh -s /usr/local/bin/bash
@@ -75,6 +71,10 @@ chmod 0440 /usr/local/etc/sudoers.d/wheelers
 ```bash
 git clone https://github.com/StrayFeral/freebsd_install_base.git /home/YOURNEWUSER/freebsd_install_base
 chown -R YOURNEWUSER:YOURNEWUSER /home/YOURNEWUSER/freebsd_install_base
+
+# Basic configs for comfort
+cp /home/YOURNEWUSER/freebsd_install_base/.bashrc /root
+cp /home/YOURNEWUSER/freebsd_install_base/.vimrc /root
 ```
 * If this is a virtual machine or container:
 ```bash
