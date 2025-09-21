@@ -24,6 +24,12 @@ cp /home/$1/freebsd_install_base/configs/.vimrc /home/$1/
 cp /home/$1/freebsd_install_base/configs/wheelers /usr/local/etc/sudoers.d/
 chmod 0440 /usr/local/etc/sudoers.d/wheelers
 
+echo ""
+echo "==================================== ENABLING JAILS ..."
+echo ""
+mkdir /usr/jails
+echo 'jail_enable="YES"' >> /etc/rc.conf
+
 echo "==================================== INSTALLING BASIC TOOLS ..."
 echo ""
 pkg install -y plocate          # files finder
@@ -31,12 +37,6 @@ pkg install -y python           # python3
 pkg install -y py311-pip        # python3 package manager
 pkg install -y bind-tools       # dig, nslookup, bind...
 pkg install -y xscreensaver     # flurry; you might NOT want this on a VM
-
-echo ""
-echo "==================================== ENABLE JAILS ..."
-echo ""
-mkdir /usr/jails
-echo 'jail_enable="YES"' >> /etc/rc.conf
 
 echo ""
 echo "==================================== CLONING PORTS TREE ..."
