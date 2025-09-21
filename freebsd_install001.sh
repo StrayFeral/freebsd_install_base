@@ -30,6 +30,7 @@ echo ""
 mkdir /usr/jails
 echo 'jail_enable="YES"' >> /etc/rc.conf
 
+echo ""
 echo "============================= INSTALLING TOOLS FOR COMPILING ..."
 echo ""
 # we need this to compile ports from source
@@ -46,6 +47,7 @@ pkg install -y node22
 pkg install -y zip
 pkg install -y yarn-node22
 
+echo ""
 echo "==================================== INSTALLING BASIC TOOLS ..."
 echo ""
 pkg install -y plocate          # files finder
@@ -95,8 +97,14 @@ echo "==================================== ENABLE USERS IN LXQT ..."
 echo ""
 # add users to group "video" so they could login in lxqt ? - no need
 echo "exec startlxqt" >> /home/$1/.xinitrc
-chown $1:$1 /home/$1/.xinitrc
 ## chmod +x ~/.xinitrc  # really ?? - no need
+
+echo ""
+echo "==================================== FIXING OWNERSHIP ..."
+echo ""
+chown $1:$1 /home/$1/.xinitrc
+chown $1:$1 /home/$1/.vimrc
+chown $1:$1 /home/$1/.bashrc
 
 echo ""
 echo "NOTE: My actual LXQT settings:"
