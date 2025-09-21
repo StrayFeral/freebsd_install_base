@@ -52,8 +52,8 @@ git clone https://github.com/StrayFeral/freebsd_install_base.git /home/YOURNEWUS
 chown -R YOURNEWUSER:YOURNEWUSER /home/YOURNEWUSER/freebsd_install_base
 
 # Basic configs for comfort
-cp /home/YOURNEWUSER/freebsd_install_base/.bashrc /root
-cp /home/YOURNEWUSER/freebsd_install_base/.vimrc /root
+cp /home/YOURNEWUSER/freebsd_install_base/configs/.bashrc /root
+cp /home/YOURNEWUSER/freebsd_install_base/configs/.vimrc /root
 ```
 * If this is a virtual machine or container:
 ```bash
