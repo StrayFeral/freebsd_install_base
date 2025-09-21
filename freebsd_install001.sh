@@ -21,6 +21,8 @@ cat /home/$1/freebsd_install_base/configs/bash_profile.txt >> /root/.bash_profil
 cat /home/$1/freebsd_install_base/configs/bash_profile.txt >> /home/$1/.bash_profile
 cp /home/$1/freebsd_install_base/configs/.bashrc /home/$1/
 cp /home/$1/freebsd_install_base/configs/.vimrc /home/$1/
+cp /home/$1/freebsd_install_base/configs/wheelers /usr/local/etc/sudoers.d/
+chmod 0440 /usr/local/etc/sudoers.d/wheelers
 
 echo "==================================== INSTALLING BASIC TOOLS ..."
 echo ""
