@@ -29,13 +29,12 @@ if [[ "$ver" == 13* ]]; then
 elif [[ "$ver" == 14* ]]; then
     echo "FreeBSD 14.x specific ..."
     pkg install -y chromium     # browser
-    pkg install -y vscode       # programming editor
+    #pkg install -y vscode       # programming editor
 else
     echo "Unsupported FreeBSD version: $ver"
 fi
 
 pkg install -y firefox          # browser
-
 pkg install -y regexxer         # graphical file content regex finder
 pkg install -y ghex             # hex editor
 pkg install -y meld             # graphical diff
