@@ -53,7 +53,7 @@ chown -R YOURNEWUSER:YOURNEWUSER /home/YOURNEWUSER/freebsd_install_base
 
 # Basic configs for comfort
 cp /home/YOURNEWUSER/freebsd_install_base/configs/.bashrc /root
-cp /home/YOURNEWUSER/freebsd_install_base/configs/.vimrc /root
+cp /home/YOURNEWUSER/freebsd_install_base/configs/vimrc_root /root/.vimrc
 ```
 * If this is a virtual machine or container:
 ```bash
