@@ -41,6 +41,10 @@ pkg install -y vim
 pkg install -y git
 pkg install -y sudo
 
+# Basic configs for comfort
+cp .bashrc /root
+cp .vimrc /root
+
 # Setup bash
 echo "/usr/local/bin/bash" | tee -a /etc/shells
 chsh -s /usr/local/bin/bash
@@ -53,8 +57,6 @@ if [ -f /usr/local/share/bash-completion/bash_completion ]; then
   . /usr/local/share/bash-completion/bash_completion
 fi
 ```
-* Create ~/.bashrc - do whatever you want, I won't get into this
-* Create ~/.vimrc - same here
 * Add to ~/.bash_profile:
 ```bash
 if [ -f ~/.bashrc ]; then
