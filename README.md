@@ -46,19 +46,6 @@ echo "/usr/local/bin/bash" | tee -a /etc/shells
 chsh -s /usr/local/bin/bash
 chsh -s /usr/local/bin/bash YOURNEWUSER  # change the shell for your other new user
 ```
-* Add to /etc/profile:
-```bash
-# Enable bash completion if available
-if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-  . /usr/local/share/bash-completion/bash_completion
-fi
-```
-* Add to ~/.bash_profile:
-```bash
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
-fi
-```
 * Enable sudo
 ```bash
 # add any new user to group "wheel"
