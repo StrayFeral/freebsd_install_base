@@ -1,0 +1,6 @@
+# allow members of wheel to execute root commands
+%wheel ALL=(ALL:ALL) ALL
+
+# you might NOT want to do the next line, i do it for virtual machines
+Defaults timestamp_timeout=300  # 5 hours
+

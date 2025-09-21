@@ -15,7 +15,7 @@ echo ""
 mkdir -p ~/Documents
 sudo cp /etc/motd ~/Documents/motd
 sudo chown $USER:$USER ~/Documents/motd  # backup
-sudo cp ~/freebsd_install_base/motd /etc/motd
+sudo cp ~/freebsd_install_base/misc/motd /etc/motd
 sudo chown root:wheel /etc/motd
 
 echo ""

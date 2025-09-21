@@ -16,11 +16,11 @@ fi
 
 echo "==================================== POPULATING CONFIG FILES ..."
 echo ""
-cat /home/$1/freebsd_install_base/etc_profile.txt >> /etc/profile
-cat /home/$1/freebsd_install_base/bash_profile.txt >> /root/.bash_profile
-cat /home/$1/freebsd_install_base/bash_profile.txt >> /home/$1/.bash_profile
-cp /home/$1/freebsd_install_base/.bashrc /home/$1/
-cp /home/$1/freebsd_install_base/.vimrc /home/$1/
+cat /home/$1/freebsd_install_base/configs/etc_profile.txt >> /etc/profile
+cat /home/$1/freebsd_install_base/configs/bash_profile.txt >> /root/.bash_profile
+cat /home/$1/freebsd_install_base/configs/bash_profile.txt >> /home/$1/.bash_profile
+cp /home/$1/freebsd_install_base/configs/.bashrc /home/$1/
+cp /home/$1/freebsd_install_base/configs/.vimrc /home/$1/
 
 echo "==================================== INSTALLING BASIC TOOLS ..."
 echo ""
