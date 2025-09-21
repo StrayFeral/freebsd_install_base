@@ -15,15 +15,27 @@ if [[ "$ver" == 13* ]]; then
     echo "FreeBSD 13.x specific ..."
     # This actually failed :(
     # pkg install -y linux-chrome
+    
+    # okay, i tried - so vscode requires electron37 but it fails
+    # to compile on freebsd13.5
+    # so i won't uncomment this.
+    # sorry.
+    
+    #cd /usr/ports/devel/electron37
+    #make install clean
+
+    #cd /usr/ports/editors/vscode
+    #make install clean
 elif [[ "$ver" == 14* ]]; then
     echo "FreeBSD 14.x specific ..."
-    pkg install -y chromium
+    pkg install -y chromium     # browser
+    pkg install -y vscode       # programming editor
 else
     echo "Unsupported FreeBSD version: $ver"
 fi
 
 pkg install -y firefox          # browser
-pkg install -y vscode           # programming editor
+
 pkg install -y regexxer         # graphical file content regex finder
 pkg install -y ghex             # hex editor
 pkg install -y meld             # graphical diff

@@ -30,6 +30,24 @@ echo ""
 mkdir /usr/jails
 echo 'jail_enable="YES"' >> /etc/rc.conf
 
+echo "============================= INSTALLING TOOLS FOR COMPILING ..."
+echo ""
+# we need this to compile ports from source
+pkg install -y gmake
+pkg install -y gcc
+pkg install -y gdb
+pkg install -y autoconf
+pkg install -y automake
+pkg install -y libtool
+pkg install -y pkgconf
+pkg install -y cmake
+pkg install -y jq
+pkg install -y node22
+pkg install -y zip
+pkg install -y yarn-node22
+
+pkg clean -ay
+
 echo "==================================== INSTALLING BASIC TOOLS ..."
 echo ""
 pkg install -y plocate          # files finder
