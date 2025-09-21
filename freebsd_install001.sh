@@ -15,8 +15,8 @@ if [ -z "$1" ]; then
 fi
 
 # Basic configs for the new user comfort
-cp .bashrc /home/$1/
-cp .vimrc /home/$1/
+cp /home/$1/freebsd_install_base/.bashrc /home/$1/
+cp /home/$1/freebsd_install_base/.vimrc /home/$1/
 
 echo "==================================== INSTALLING BASIC TOOLS ..."
 echo ""
