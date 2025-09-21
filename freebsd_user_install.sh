@@ -9,6 +9,7 @@ echo ""
 # the ssh keys would go there - this is up to you
 mkdir -p ~/.ssh
 
+# ok, you might not want this, but i want it
 echo "==================================== CHANGE MOTD ..."
 echo ""
 mkdir -p ~/Documents

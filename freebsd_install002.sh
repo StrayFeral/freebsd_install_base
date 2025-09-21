@@ -22,22 +22,18 @@ else
     echo "Unsupported FreeBSD version: $ver"
 fi
 
-pkg install -y firefox
-pkg install -y vscode
-pkg install -y regexxer
-pkg install -y ghex
-pkg install -y meld
-# download advanced rest client: arc-linux
-# pkg install -y terminator  # problem - space after each char !
-pkg install -y vlc
-pkg install -y gimp
-pkg install -y libreoffice
-pkg install -y gnome-clocks
-# pkg install -y kcalc
-pkg install -y arc
-pkg install -y geany
+pkg install -y firefox          # browser
+pkg install -y vscode           # programming editor
+pkg install -y regexxer         # graphical file content regex finder
+pkg install -y ghex             # hex editor
+pkg install -y meld             # graphical diff
+pkg install -y vlc              # media player
+pkg install -y gimp             # image manipulation program
+pkg install -y libreoffice      # office package
+pkg install -y gnome-clocks     # useful clocks
+pkg install -y geany            # programming editor
 pkg install -y geany-plugins
-pkg install -y thunderbird
+pkg install -y thunderbird      # mail client
 # install betterbird mail client or thunderbird ?
 
 echo ""

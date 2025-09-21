@@ -14,14 +14,17 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+# Basic configs for the new user comfort
+cp .bashrc /home/$1/
+cp .vimrc /home/$1/
+
 echo "==================================== INSTALLING BASIC TOOLS ..."
 echo ""
-pkg install -y plocate
-# pkg install -y octopkg  # i disliked it
-pkg install -y python
-pkg install -y py311-pip
-pkg install -y bind-tools  # dig, nslookup, bind...
-pkg install -y xscreensaver  # flurry; you might NOT want this on a VM
+pkg install -y plocate          # files finder
+pkg install -y python           # python3
+pkg install -y py311-pip        # python3 package manager
+pkg install -y bind-tools       # dig, nslookup, bind...
+pkg install -y xscreensaver     # flurry; you might NOT want this on a VM
 
 echo ""
 echo "==================================== ENABLE JAILS ..."
@@ -64,16 +67,9 @@ else
 fi
 
 echo ""
-echo "==================================== ADDING TO BASHRC ..."
-echo ""
-echo "export PATH=$PATH:~/.local/bin" >> ~/.bashrc
-echo "export QT_QPA_PLATFORMTHEME=qt6ct" >> ~/.bashrc
-echo "alias vi='vim'" >> ~/.bashrc
-
-echo ""
 echo "==================================== ENABLE USERS IN LXQT ..."
 echo ""
-# add users to group "video" so they could login in lxqt !!!
+# add users to group "video" so they could login in lxqt ? - no need
 echo "exec startlxqt" >> /home/$1/.xinitrc
 chown $1:$1 /home/$1/.xinitrc
 ## chmod +x ~/.xinitrc  # really ?? - no need
