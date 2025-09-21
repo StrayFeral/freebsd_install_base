@@ -31,7 +31,7 @@
 * These very first steps are supposed to lay out the foundation on top of which the automated scripts below could work but also help you debug installation issues, in case such arise.
 ```bash
 freebsd-update fetch install     # get any system and security updates
-pkg update -y
+pkg update
 pkg upgrade -y
 
 pkg install -y en-freebsd-doc    # freebsd english documentation
