@@ -75,18 +75,20 @@ sysrc slim_enable="YES"
 echo "exec startlxqt" >> ~/.xinitrc
 # pkg install -y oxygen-icons  # fixes missing icons
 pkg install -y papirus-icon-theme
+pkg install -y kf6-breeze-icons
+pkg install -y plasma6-breeze-gtk
 
-if [[ "$ver" == 13* ]]; then
-    echo "FreeBSD 13.x specific ..."
-    pkg install -y kf6-breeze-icons
-    pkg install -y plasma6-breeze-gtk
-elif [[ "$ver" == 14* ]]; then
-    echo "FreeBSD 14.x specific ..."
-    pkg install -y breeze-qt5
-    pkg install -y breeze-qt6
-else
-    echo "Unsupported FreeBSD version: $ver"
-fi
+#if [[ "$ver" == 13* ]]; then
+#    echo "FreeBSD 13.x specific ..."
+#    pkg install -y kf6-breeze-icons
+#    pkg install -y plasma6-breeze-gtk
+#elif [[ "$ver" == 14* ]]; then
+#    echo "FreeBSD 14.x specific ..."
+#    pkg install -y breeze-qt5
+#    pkg install -y breeze-qt6
+#else
+#    echo "Unsupported FreeBSD version: $ver"
+#fi
 
 echo ""
 echo "==================================== ENABLE USERS IN LXQT ..."
