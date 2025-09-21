@@ -46,8 +46,6 @@ pkg install -y node22
 pkg install -y zip
 pkg install -y yarn-node22
 
-pkg clean -ay
-
 echo "==================================== INSTALLING BASIC TOOLS ..."
 echo ""
 pkg install -y plocate          # files finder
@@ -109,5 +107,7 @@ echo ""
 echo ""
 echo "==================================== DONE. REBOOT ..."
 echo ""
+
+pkg clean -ay                   # clean-up
 
 reboot

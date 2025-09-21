@@ -48,5 +48,7 @@ pkg install -y geany-plugins
 pkg install -y thunderbird      # mail client
 # install betterbird mail client or thunderbird ?
 
+pkg clean -ay                   # clean-up
+
 echo ""
 echo "Done."
