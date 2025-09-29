@@ -1,4 +1,21 @@
-Install trough ports
--------------------
+INSTALL TROUGH PORTS:
+
+Safest way - no leftovers
+=========================
+make package
+pkg add work/pkg/portname-*.pkg
+
+Not a safe way - leftover files remain
+======================================
 cd /usr/ports/editors/nano
 make install clean
+
+If installation failed before package was registered
+----------------------------------------------------
+make clean
+make -V TMPPLIST | xargs rm -f
+
+If package was registered
+-------------------------
+make deinstall
+
