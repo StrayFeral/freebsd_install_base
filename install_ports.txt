@@ -8,7 +8,7 @@ make run-depends-list
 
 Safest way - no leftovers
 =========================
-make package
+make BATCH=yes package-recursive
 pkg add work/pkg/portname-*.pkg
 
 Not a safe way - leftover files remain
