@@ -8,8 +8,11 @@ make run-depends-list
 
 Safest way - no leftovers
 =========================
+export PACKAGES=/usr/ports/packages
 make BATCH=yes package-recursive
-pkg add work/pkg/portname-*.pkg
+cd /usr/ports/packages/All
+# pkg add work/pkg/portname-*.pkg
+pkg add -A portname-*.pkg
 
 Not a safe way - leftover files remain
 ======================================
