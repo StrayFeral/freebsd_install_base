@@ -1,5 +1,11 @@
 INSTALL TROUGH PORTS:
 
+Get info about dependencies
+---------------------------
+make all-depends-list
+make build-depends-list
+make run-depends-list
+
 Safest way - no leftovers
 =========================
 make package
