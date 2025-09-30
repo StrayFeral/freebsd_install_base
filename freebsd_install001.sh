@@ -62,7 +62,7 @@ pkg install -y bind-tools       # dig, nslookup, bind...
 pkg install -y xscreensaver     # flurry; you might NOT want this on a VM
 
 if [ -d "/usr/ports" ] && ! compgen -G "/usr/ports/*" > /dev/null; then
-    # Directory exists and is not empty
+    # Directory exists and is empty
     echo ""
     echo "==================================== CLONING PORTS TREE ..."
     echo ""
