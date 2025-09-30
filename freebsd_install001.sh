@@ -27,7 +27,7 @@ chmod 0440 /usr/local/etc/sudoers.d/wheelers
 echo ""
 echo "==================================== ENABLING JAILS ..."
 echo ""
-mkdir /usr/jails
+mkdir -p /usr/jails
 echo 'jail_enable="YES"' >> /etc/rc.conf
 
 #if [ -d "/usr/ports" ] && compgen -G "/usr/ports/*" > /dev/null; then
