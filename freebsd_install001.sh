@@ -30,36 +30,38 @@ echo ""
 mkdir /usr/jails
 echo 'jail_enable="YES"' >> /etc/rc.conf
 
-if [ -d "$dir" ] && compgen -G "$dir/*" > /dev/null; then
-    # Directory exists and is not empty
-    echo ""
-    echo "============================= INSTALLING TOOLS FOR COMPILING ..."
-    echo ""
-    # we need this to compile ports from source
-    pkg install -y gmake
-    pkg install -y gcc
-    pkg install -y gdb
-    pkg install -y autoconf
-    pkg install -y automake
-    pkg install -y libtool
-    pkg install -y pkgconf
-    pkg install -y cmake
-    pkg install -y jq
-    pkg install -y node22
-    pkg install -y zip
-    pkg install -y yarn-node22
-fi
+#if [ -d "/usr/ports" ] && compgen -G "/usr/ports/*" > /dev/null; then
+#    # Directory exists and is not empty
+echo ""
+echo "============================= INSTALLING TOOLS FOR COMPILING ..."
+echo ""
+# we need this to compile ports from source
+pkg install -y gmake
+pkg install -y gcc
+pkg install -y gdb
+pkg install -y autoconf
+pkg install -y automake
+pkg install -y libtool
+pkg install -y pkgconf
+pkg install -y cmake
+pkg install -y jq
+pkg install -y node22
+pkg install -y zip
+pkg install -y yarn-node22
+#fi
 
 echo ""
 echo "==================================== INSTALLING BASIC TOOLS ..."
 echo ""
 pkg install -y plocate          # files finder
+pkg install -y wget             # web utility
+pkg install -y curl             # web utility
 pkg install -y python           # python3
 pkg install -y py311-pip        # python3 package manager
 pkg install -y bind-tools       # dig, nslookup, bind...
 pkg install -y xscreensaver     # flurry; you might NOT want this on a VM
 
-if [ -d "$dir" ] && compgen -G "$dir/*" > /dev/null; then
+if [ -d "/usr/ports" ] && compgen -G "/usr/ports/*" > /dev/null; then
     # Directory exists and is not empty
     echo ""
     echo "==================================== CLONING PORTS TREE ..."
