@@ -44,6 +44,12 @@ echo "Test installation:"
 echo ":echo ale#engine#IsChecking()"
 
 echo ""
+echo "========================== INSTALLING GEANY EDITOR DARK THEME ..."
+echo ""
+mkdir -p ~/.config/geany/colorschemes
+cp ~/freebsd_install_base/configs/evg-ega-dark.conf ~/.config/geany/colorschemes/
+
+echo ""
 echo "==================================== LXQT FINAL MODIFICATIONS ..."
 echo ""
 echo "right click application menu > configure > widgets"
